@@ -1,8 +1,7 @@
-// require("@nomicfoundation/hardhat-toolbox");
+require("@nomicfoundation/hardhat-toolbox");
 // hardhat.config.js
 require("@openzeppelin/hardhat-upgrades");
-require("@nomiclabs/hardhat-ethers");
-require("@nomiclabs/hardhat-etherscan");
+require("@nomicfoundation/hardhat-ethers");
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -10,10 +9,13 @@ module.exports = {
   networks: {
     sepolia: {
       url: "https://sepolia.infura.io/v3/ace13403824d4f809e011d9d547a4aa1",
-      accounts: [process.env.PRI_KEY],
+      accounts: [`56fe1fd10f0203c190640fb0bad78e9bf29d10fc2fbc97ee1ff49ee4acd2d08a`],
     },
   },
   etherscan: {
-    apiKey: process.env.ETHERSCAN_API_KEY,
+    apiKey: {
+      sepolia : "ace13403824d4f809e011d9d547a4aa1"
+    }
+    
   },
 };
