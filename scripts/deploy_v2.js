@@ -7,7 +7,9 @@ async function main(){
     })
     await boxv2.waitForDeployment();
 
-  
+    const address = await ("Box contract deployed at ", boxv2.getAddress());
+    console.log(address);
+   
 }  
 
 main();
