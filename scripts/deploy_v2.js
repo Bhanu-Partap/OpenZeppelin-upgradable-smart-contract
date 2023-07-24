@@ -5,8 +5,9 @@ async function main(){
     const boxv2 = await upgrades.deployProxy(BoxV2, {
         initializer : "inc"
     })
-    
-   
+    await boxv2.waitForDeployment();
+
+  
 }  
 
 main();
